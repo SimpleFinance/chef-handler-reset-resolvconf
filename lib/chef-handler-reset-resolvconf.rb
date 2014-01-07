@@ -17,7 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Chef handler to edit MOTD with useful info after a run
+# Copies old resolv.conf to /etc/resolv.conf in the event a Chef run fails
 
 require 'rubygems'
 require 'chef'
