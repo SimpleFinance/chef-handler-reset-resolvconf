@@ -36,7 +36,7 @@ class ResetResolvconf < Chef::Handler
     #   * dest: where to copy the resolv.conf at the time of Chef failure
     def defaults
       return {
-        old: '/var/cache/chef/resolv.conf.old'
+        old: '/var/cache/chef/resolv.conf.old',
         dest: '/var/cache/chef/resolv.conf.fail'
       }
     end
