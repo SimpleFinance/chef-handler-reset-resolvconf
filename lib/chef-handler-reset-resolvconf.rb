@@ -43,7 +43,7 @@ class ResetResolvconf < Chef::Handler
 
     def report
       if run_status.failed?
-        if !File.exists(@old)
+        if !File.exists?(@old)
           Chef::Log.error("Couldn't find a file at #{@old}, bailing!")
         else
           Chef::Log.info('Chef run failed! Reverting /etc/resolv.conf!')
