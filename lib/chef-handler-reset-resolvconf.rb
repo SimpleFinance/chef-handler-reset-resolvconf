@@ -49,7 +49,7 @@ class ResetResolvconf < Chef::Handler
           Chef::Log.info('Chef run failed! Reverting /etc/resolv.conf!')
           Chef::Log.debug("Copying current /etc/resolv.conf to #{@dest}")
           FileUtils.cp('/etc/resolv.conf', @dest)
-          File.open('/etc/resolv.conf'){|f| f.puts(File.read(@old))}
+          File.open('/etc/resolv.conf', 'w'){|f| f.puts(File.read(@old))}
         end
       end
     end
